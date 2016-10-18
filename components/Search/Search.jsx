@@ -1,15 +1,17 @@
 import React from 'react';
 
-class Search extends React.Component{
-    getInitialState() {
-        return { value: '' };
+export default class Search extends React.Component {
+
+    constructor() {
+        super();
+        this.state = {value: ''};
     }
 
     handleChange(event) {
         this.setState({value: event.target.value});
     }
 
-    handleSubmit(event){
+    handleSubmit(event) {
 
         event.preventDefault();
 
@@ -29,7 +31,7 @@ class Search extends React.Component{
                     <div className="col-xs-12 col-md-6 col-md-offset-3">
                         <div className="input-group">
                             <input type="text" className="form-control" id="address" placeholder="Find a location..."
-                                   value={this.state.value} onChange={this.handleChange} />
+                                   value={this.state.value} onChange={this.handleChange}/>
 							<span className="input-group-btn">
 								<span className="glyphicon glyphicon-search" aria-hidden="true"></span>
 							</span>
@@ -42,4 +44,3 @@ class Search extends React.Component{
     }
 }
 
-export default Search;

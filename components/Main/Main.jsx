@@ -1,10 +1,7 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import App from '../App/App.jsx';
 
-class Main extends React.Component{
-    render(){
-       <App />,
-           document.getElementById('main')
-    }
-}
-export default Main;
+
+ReactDOM.render(<App />, document.getElementById('main'));
+

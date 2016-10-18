@@ -2,7 +2,7 @@ import React from 'react';
 import LocationItem from '../LocationItem/LocationItem.jsx'
 
 
-class LocationList extends React.Component{
+export default class LocationList extends React.Component{
     render(){
 
         var self = this;
@@ -32,4 +32,4 @@ class LocationList extends React.Component{
     }
 }
 
-export default LocationList;
+// export default LocationList;

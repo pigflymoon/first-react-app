@@ -1,6 +1,6 @@
 import React from 'react';
 
-class LocationItem extends React.Component {
+export default class LocationItem extends React.Component {
 
     handleClick() {
         this.props.onClick(this.props.address);
@@ -25,4 +25,4 @@ class LocationItem extends React.Component {
     }
 }
 
-export default LocationItem;
+// export default LocationItem;

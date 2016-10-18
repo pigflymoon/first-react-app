@@ -7693,21 +7693,17 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _App = __webpack_require__(247);
+	var _Main = __webpack_require__(247);
+
+	var _Main2 = _interopRequireDefault(_Main);
+
+	var _App = __webpack_require__(248);
 
 	var _App2 = _interopRequireDefault(_App);
 
-	__webpack_require__(253);
+	__webpack_require__(254);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	// class Hello extends React.Component {
-	//     render() {
-	//         return <h1>Hello</h1>
-	//     }
-	// }
-
-	_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('main'));
 
 /***/ },
 /* 77 */
@@ -28931,6 +28927,35 @@
 
 	'use strict';
 
+	var _react = __webpack_require__(77);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(109);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _App = __webpack_require__(248);
+
+	var _App2 = _interopRequireDefault(_App);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	// class Main extends React.Component {
+	//     render() {
+	//         return <h1>Hello</h1>
+	//     }
+	// }
+
+
+	_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('main'));
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
@@ -28941,19 +28966,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Search = __webpack_require__(248);
+	var _Search = __webpack_require__(249);
 
 	var _Search2 = _interopRequireDefault(_Search);
 
-	var _Map = __webpack_require__(249);
+	var _Map = __webpack_require__(250);
 
 	var _Map2 = _interopRequireDefault(_Map);
 
-	var _CurrentLocation = __webpack_require__(250);
+	var _CurrentLocation = __webpack_require__(251);
 
 	var _CurrentLocation2 = _interopRequireDefault(_CurrentLocation);
 
-	var _LocationList = __webpack_require__(251);
+	var _LocationList = __webpack_require__(252);
 
 	var _LocationList2 = _interopRequireDefault(_LocationList);
 
@@ -29121,7 +29146,7 @@
 	exports.default = App;
 
 /***/ },
-/* 248 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29212,7 +29237,7 @@
 	exports.default = Search;
 
 /***/ },
-/* 249 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29306,7 +29331,7 @@
 	exports.default = Map;
 
 /***/ },
-/* 250 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -29372,7 +29397,7 @@
 	exports.default = CurrentLocation;
 
 /***/ },
-/* 251 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29387,7 +29412,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _LocationItem = __webpack_require__(252);
+	var _LocationItem = __webpack_require__(253);
 
 	var _LocationItem2 = _interopRequireDefault(_LocationItem);
 
@@ -29448,7 +29473,7 @@
 	exports.default = LocationList;
 
 /***/ },
-/* 252 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -29515,16 +29540,16 @@
 	exports.default = LocationItem;
 
 /***/ },
-/* 253 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(254);
+	var content = __webpack_require__(255);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(256)(content, {});
+	var update = __webpack_require__(257)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -29541,10 +29566,10 @@
 	}
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(255)();
+	exports = module.exports = __webpack_require__(256)();
 	// imports
 
 
@@ -29555,7 +29580,7 @@
 
 
 /***/ },
-/* 255 */
+/* 256 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -29610,7 +29635,7 @@
 	};
 
 /***/ },
-/* 256 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*

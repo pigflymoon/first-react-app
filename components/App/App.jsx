@@ -4,9 +4,10 @@ import Map from '../Map/Map.jsx';
 import CurrentLocation from '../CurrentLocation/CurrentLocation.jsx';
 import LocationList from '../LocationList/LocationList.jsx';
 
-class App extends React.Component {
 
-    constructor(){
+export default class App extends React.Component {
+
+    constructor() {
         super();
         // Extract the favorite locations from local storage
 
@@ -17,21 +18,21 @@ class App extends React.Component {
         }
 
         // Nobody would get mad if we center it on Paris by default
-
-        return {
+        this.state = {
             favorites: favorites,
-            currentAddress: 'Paris, France',
+            currentAddress: 'Paris,France',
             mapCoordinates: {
                 lat: 48.856614,
                 lng: 2.3522219
             }
         };
 
+
     }
 
     render() {
-
-        return ( <div>
+        return (
+            <div>
                 <h1>Your Google Maps Locations</h1>
 
                 <Search onSearch={this.searchForAddress}/>
@@ -47,7 +48,7 @@ class App extends React.Component {
 
             </div>
 
-        );
+        )
     }
 
     toggleFavorite(address) {
@@ -155,5 +156,3 @@ class App extends React.Component {
 
 
 }
-
-export default App;

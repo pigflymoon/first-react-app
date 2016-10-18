@@ -1,6 +1,6 @@
 import React from 'react';
 
-class CurrentLocation extends React.Component{
+export default class CurrentLocation extends React.Component{
 
     toggleFavorite1(){
         this.props.onFavoriteToggle(this.props.address);
@@ -22,4 +22,4 @@ class CurrentLocation extends React.Component{
         );
     }
 }
-export default CurrentLocation;
+// export default CurrentLocation;
