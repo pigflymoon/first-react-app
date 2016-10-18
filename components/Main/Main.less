@@ -1,0 +1,109 @@
+// Color variables (appears count calculates by raw css)
+@color0: #969fa8; // Appears 2 times
+
+// Width variables (appears count calculates by raw css)
+@width1: 500px; // Appears 2 times
+
+// Height variables (appears count calculates by raw css)
+@height0: 350px; // Appears 2 times
+
+.container {
+  margin: 20px auto;
+  max-width: 980px;
+  text-align: center;
+}
+h1 {
+  margin-bottom: 20px;
+}
+#geocoding_form {
+  margin: 40px auto 60px;
+}
+#address {
+  border-radius: 3px;
+}
+.input-group {
+  margin-left: 4%;
+}
+.glyphicon {
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 20;
+}
+.glyphicon-search {
+  position: relative;
+  right: 30px;
+}
+.current-location {
+  margin-top: 30px;
+  .glyphicon-star {
+    display: inline-block;
+    font-size: 22px;
+    margin-left: 10px;
+    vertical-align: text-bottom;
+  }
+  .glyphicon-star-empty {
+    display: inline-block;
+    font-size: 22px;
+    margin-left: 10px;
+    vertical-align: text-bottom;
+  }
+}
+#save-location {
+  display: inline;
+  line-height: 1.4;
+  margin: 10px auto;
+}
+.glyphicon-menu-right {
+  margin-top: -9px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+}
+.map-holder {
+  background-color: #FCFCFC;
+  border-radius: 2px;
+  height: @height0;
+  margin: 0 auto;
+  max-width: @width1;
+  position: relative;
+  p {
+    color: @color0;
+    font-size: 20px;
+    height: 22px;
+    left: 50%;
+    margin: -11px auto 0 -42px;
+    position: absolute;
+    top: 50%;
+    width: 84px;
+  }
+}
+#map {
+  height: @height0;
+  margin: 0 auto;
+  max-width: @width1;
+}
+.list-group {
+  margin-top: 50px;
+  padding: 0 15px;
+}
+.list-group-item {
+  padding: 10px 20px;
+  position: relative;
+}
+a.list-group-item {
+  cursor: pointer;
+  &:hover {
+    background-color: #F7FBFF;
+  }
+  span.createdAt {
+    color: @color0;
+    display: block;
+    z-index: -1;
+  }
+}
+a.active-location {
+  background-color: #EEF6FF;
+  &:hover {
+    background-color: #EBF3FC;
+  }
+}
