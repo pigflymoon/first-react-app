@@ -2,8 +2,8 @@ var path = require('path');
 var webpack = require('webpack');
 
 var ROOT_PATH = path.resolve(__dirname);
-var APP_PATH = path.resolve(__dirname,'./components/index.js');
-var BUILD_PATH = path.resolve(__dirname,'./build');
+var APP_PATH = path.resolve(__dirname, './components/index.js');
+var BUILD_PATH = path.resolve(__dirname, './build');
 
 module.exports ={
     entry : [

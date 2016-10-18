@@ -6,8 +6,8 @@ import LocationList from '../LocationList/LocationList.jsx';
 
 class App extends React.Component {
 
-    getInitialState() {
-
+    constructor(){
+        super();
         // Extract the favorite locations from local storage
 
         var favorites = [];
@@ -26,8 +26,29 @@ class App extends React.Component {
                 lng: 2.3522219
             }
         };
+
     }
 
+    render() {
+
+        return ( <div>
+                <h1>Your Google Maps Locations</h1>
+
+                <Search onSearch={this.searchForAddress}/>
+
+                <Map lat={this.state.mapCoordinates.lat} lng={this.state.mapCoordinates.lng}/>
+
+                <CurrentLocation address={this.state.currentAddress}
+                                 favorite={this.isAddressInFavorites(this.state.currentAddress)}
+                                 onFavoriteToggle={this.toggleFavorite}/>
+
+                <LocationList locations={this.state.favorites} activeLocationAddress={this.state.currentAddress}
+                              onClick={this.searchForAddress}/>
+
+            </div>
+
+        );
+    }
 
     toggleFavorite(address) {
 
@@ -133,28 +154,6 @@ class App extends React.Component {
     }
 
 
-    render() {
-
-        return (
-
-            <div>
-                <h1>Your Google Maps Locations</h1>
-
-                <Search onSearch={this.searchForAddress}/>
-
-                <Map lat={this.state.mapCoordinates.lat} lng={this.state.mapCoordinates.lng}/>
-
-                <CurrentLocation address={this.state.currentAddress}
-                                 favorite={this.isAddressInFavorites(this.state.currentAddress)}
-                                 onFavoriteToggle={this.toggleFavorite}/>
-
-                <LocationList locations={this.state.favorites} activeLocationAddress={this.state.currentAddress}
-                              onClick={this.searchForAddress}/>
-
-            </div>
-
-        );
-    }
 }
 
 export default App;
