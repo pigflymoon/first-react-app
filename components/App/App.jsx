@@ -7,8 +7,8 @@ import LocationList from '../LocationList/LocationList.jsx';
 
 export default class App extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         // Extract the favorite locations from local storage
 
         var favorites = [];

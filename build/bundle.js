@@ -7697,10 +7697,6 @@
 
 	var _Main2 = _interopRequireDefault(_Main);
 
-	var _App = __webpack_require__(248);
-
-	var _App2 = _interopRequireDefault(_App);
-
 	__webpack_require__(254);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -28941,13 +28937,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// class Main extends React.Component {
-	//     render() {
-	//         return <h1>Hello</h1>
-	//     }
-	// }
-
-
 	_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('main'));
 
 /***/ },
@@ -28994,8 +28983,6 @@
 	    _inherits(App, _React$Component);
 
 	    function App() {
-	        var _ret;
-
 	        _classCallCheck(this, App);
 
 	        // Extract the favorite locations from local storage
@@ -29009,21 +28996,21 @@
 	        }
 
 	        // Nobody would get mad if we center it on Paris by default
-
-	        return _ret = {
+	        _this.state = {
 	            favorites: favorites,
-	            currentAddress: 'Paris, France',
+	            currentAddress: 'Paris,France',
 	            mapCoordinates: {
 	                lat: 48.856614,
 	                lng: 2.3522219
 	            }
-	        }, _possibleConstructorReturn(_this, _ret);
+	        };
+
+	        return _this;
 	    }
 
 	    _createClass(App, [{
 	        key: 'render',
 	        value: function render() {
-
 	            return _react2.default.createElement(
 	                'div',
 	                null,
@@ -29175,15 +29162,14 @@
 	    function Search() {
 	        _classCallCheck(this, Search);
 
-	        return _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).call(this));
+
+	        _this.state = { value: '' };
+	        _this.handleSubmit = _this.handleSubmit.bind(_this);
+	        return _this;
 	    }
 
 	    _createClass(Search, [{
-	        key: 'getInitialState',
-	        value: function getInitialState() {
-	            return { value: '' };
-	        }
-	    }, {
 	        key: 'handleChange',
 	        value: function handleChange(event) {
 	            this.setState({ value: event.target.value });
@@ -29192,6 +29178,7 @@
 	        key: 'handleSubmit',
 	        value: function handleSubmit(event) {
 
+	            console.log('hi');
 	            event.preventDefault();
 
 	            // When the form is submitted, call the onSearch callback that is passed to the component
@@ -29207,7 +29194,7 @@
 
 	            return _react2.default.createElement(
 	                'form',
-	                { id: 'geocoding_form', className: 'form-horizontal', onSubmit: this.handleSubmit },
+	                { id: 'geocoding_form', className: 'form-horizontal', onSubmit: this.handleSubmit.bind(this) },
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'form-group' },
@@ -29218,7 +29205,7 @@
 	                            'div',
 	                            { className: 'input-group' },
 	                            _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'address', placeholder: 'Find a location...',
-	                                value: this.state.value, onChange: this.handleChange }),
+	                                value: this.state.value, onChange: this.handleChange.bind(this) }),
 	                            _react2.default.createElement(
 	                                'span',
 	                                { className: 'input-group-btn' },
@@ -29301,8 +29288,9 @@
 	                lng: this.props.lng
 	            });
 
+	            console.log(map);
 	            // Adding a marker to the location we are showing
-
+	            console.log("Map" + this.props.lng);
 	            map.addMarker({
 	                lat: this.props.lat,
 	                lng: this.props.lng
@@ -29393,6 +29381,8 @@
 
 	    return CurrentLocation;
 	}(_react2.default.Component);
+	// export default CurrentLocation;
+
 
 	exports.default = CurrentLocation;
 
@@ -29470,6 +29460,9 @@
 	    return LocationList;
 	}(_react2.default.Component);
 
+	// export default LocationList;
+
+
 	exports.default = LocationList;
 
 /***/ },
@@ -29536,6 +29529,9 @@
 
 	    return LocationItem;
 	}(_react2.default.Component);
+
+	// export default LocationItem;
+
 
 	exports.default = LocationItem;
 

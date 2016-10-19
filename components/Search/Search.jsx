@@ -5,6 +5,7 @@ export default class Search extends React.Component {
     constructor() {
         super();
         this.state = {value: ''};
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
