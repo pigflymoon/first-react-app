@@ -28982,12 +28982,12 @@
 	var App = function (_React$Component) {
 	    _inherits(App, _React$Component);
 
-	    function App() {
+	    function App(props) {
 	        _classCallCheck(this, App);
 
 	        // Extract the favorite locations from local storage
 
-	        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
+	        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
 	        var favorites = [];
 
@@ -29159,26 +29159,28 @@
 	var Search = function (_React$Component) {
 	    _inherits(Search, _React$Component);
 
-	    function Search() {
+	    function Search(props) {
 	        _classCallCheck(this, Search);
 
-	        var _this = _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).call(this));
+	        var _this = _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).call(this, props));
 
 	        _this.state = { value: '' };
+	        console.log('hi');
 	        _this.handleSubmit = _this.handleSubmit.bind(_this);
+	        _this.handleChange = _this.handleChange.bind(_this);
 	        return _this;
 	    }
 
 	    _createClass(Search, [{
 	        key: 'handleChange',
 	        value: function handleChange(event) {
-	            this.setState({ value: event.target.value });
+	            this.setState({ value: event.target.value }).bind(this);
 	        }
 	    }, {
 	        key: 'handleSubmit',
 	        value: function handleSubmit(event) {
 
-	            console.log('hi');
+	            console.log('submit');
 	            event.preventDefault();
 
 	            // When the form is submitted, call the onSearch callback that is passed to the component
@@ -29186,7 +29188,8 @@
 	            this.props.onSearch(this.state.value);
 
 	            // Unfocus the text input field
-	            this.getDOMNode().querySelector('input').blur();
+	            // console.log(this.getDOMNode());
+	            // this.getDOMNode().querySelector('input').blur();
 	        }
 	    }, {
 	        key: 'render',
@@ -29194,7 +29197,7 @@
 
 	            return _react2.default.createElement(
 	                'form',
-	                { id: 'geocoding_form', className: 'form-horizontal', onSubmit: this.handleSubmit.bind(this) },
+	                { id: 'geocoding_form', className: 'form-horizontal', onSubmit: this.handleSubmit },
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'form-group' },
@@ -29205,7 +29208,7 @@
 	                            'div',
 	                            { className: 'input-group' },
 	                            _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'address', placeholder: 'Find a location...',
-	                                value: this.state.value, onChange: this.handleChange.bind(this) }),
+	                                value: this.state.value, onChange: this.handleChange }),
 	                            _react2.default.createElement(
 	                                'span',
 	                                { className: 'input-group-btn' },
@@ -29261,7 +29264,7 @@
 	        value: function componentDidMount() {
 
 	            // Only componentDidMount is called when the component is first added to
-	            // the page. This is why we are calling the following method manually. 
+	            // the page. This is why we are calling the following method manually.
 	            // This makes sure that our map initialization code is run the first time.
 
 	            this.componentDidUpdate();
@@ -29288,9 +29291,8 @@
 	                lng: this.props.lng
 	            });
 
-	            console.log(map);
 	            // Adding a marker to the location we are showing
-	            console.log("Map" + this.props.lng);
+
 	            map.addMarker({
 	                lat: this.props.lat,
 	                lng: this.props.lng
@@ -29308,7 +29310,11 @@
 	                    null,
 	                    'Loading...'
 	                ),
-	                _react2.default.createElement('div', { id: 'map' })
+	                _react2.default.createElement(
+	                    'div',
+	                    { id: 'map' },
+	                    '111'
+	                )
 	            );
 	        }
 	    }]);

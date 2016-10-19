@@ -8,7 +8,6 @@ export default class Map extends React.Component {
         // This makes sure that our map initialization code is run the first time.
 
         this.componentDidUpdate();
-        console.log('called');
     }
 
     componentDidUpdate() {
@@ -31,7 +30,6 @@ export default class Map extends React.Component {
             lng: this.props.lng
         });
 
-        console.log(map);
         // Adding a marker to the location we are showing
 
         map.addMarker({

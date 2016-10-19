@@ -10,7 +10,7 @@ export default class App extends React.Component {
     constructor(props) {
         super(props);
         // Extract the favorite locations from local storage
-
+        this.searchForAddress = this.searchForAddress.bind(this);
         var favorites = [];
 
         if (localStorage.favorites) {
@@ -129,7 +129,7 @@ export default class App extends React.Component {
     searchForAddress(address) {
 
         var self = this;
-
+        // this.setState = this.setState.bind(this);
         // We will use GMaps' geocode functionality,
         // which is built on top of the Google Maps API
 
@@ -140,6 +140,7 @@ export default class App extends React.Component {
                 if (status !== 'OK') return;
 
                 var latlng = results[0].geometry.location;
+                console.log('latlan' +latlng);
 
                 self.setState({
                     currentAddress: results[0].formatted_address,
