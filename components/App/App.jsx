@@ -11,6 +11,12 @@ export default class App extends React.Component {
         super(props);
         // Extract the favorite locations from local storage
         this.searchForAddress = this.searchForAddress.bind(this);
+
+        this.isAddressInFavorites = this.isAddressInFavorites.bind(this);
+        this.toggleFavorite = this.toggleFavorite.bind(this);
+        // this.addToFavorites = this.addToFavorites.bind(this);
+        // this.removeFromFavorites = this.removeFromFavorites.bind(this);
+
         var favorites = [];
 
         if (localStorage.favorites) {
@@ -28,27 +34,6 @@ export default class App extends React.Component {
         };
 
 
-    }
-
-    render() {
-        return (
-            <div>
-                <h1>Your Google Maps Locations</h1>
-
-                <Search onSearch={this.searchForAddress}/>
-
-                <Map lat={this.state.mapCoordinates.lat} lng={this.state.mapCoordinates.lng}/>
-
-                <CurrentLocation address={this.state.currentAddress}
-                                 favorite={this.isAddressInFavorites(this.state.currentAddress)}
-                                 onFavoriteToggle={this.toggleFavorite}/>
-
-                <LocationList locations={this.state.favorites} activeLocationAddress={this.state.currentAddress}
-                              onClick={this.searchForAddress}/>
-
-            </div>
-
-        )
     }
 
     toggleFavorite(address) {
@@ -111,6 +96,7 @@ export default class App extends React.Component {
 
 
     isAddressInFavorites(address) {
+        console.log(address);
 
         var favorites = this.state.favorites;
 
@@ -154,6 +140,29 @@ export default class App extends React.Component {
         });
 
     }
+
+    render() {
+        return (
+            <div>
+                <h1>Your Google Maps Locations</h1>
+
+                <Search onSearch={this.searchForAddress}/>
+
+                <Map lat={this.state.mapCoordinates.lat} lng={this.state.mapCoordinates.lng}/>
+
+                <CurrentLocation address={this.state.currentAddress}
+                                 favorite={this.isAddressInFavorites(this.state.currentAddress)}
+                                 onFavoriteToggle={this.toggleFavorite}/>
+
+                <LocationList locations={this.state.favorites} activeLocationAddress={this.state.currentAddress}
+                              onClick={this.searchForAddress}/>
+
+            </div>
+
+        )
+    }
+
+
 
 
 }

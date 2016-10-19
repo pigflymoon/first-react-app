@@ -17,7 +17,7 @@ export default class CurrentLocation extends React.Component{
         return (
             <div className="col-xs-12 col-md-6 col-md-offset-3 current-location">
                 <h4 id="save-location">{this.props.address}</h4>
-                <span className={starClassName} onClick={this.toggleFavorite1} aria-hidden="true"></span>
+                <span className={starClassName} onClick={this.toggleFavorite1.bind(this)} aria-hidden="true"></span>
             </div>
         );
     }

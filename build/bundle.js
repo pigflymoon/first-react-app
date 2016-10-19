@@ -28986,9 +28986,9 @@
 	        _classCallCheck(this, App);
 
 	        // Extract the favorite locations from local storage
-
 	        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
+	        _this.searchForAddress = _this.searchForAddress.bind(_this);
 	        var favorites = [];
 
 	        if (localStorage.favorites) {
@@ -29103,7 +29103,7 @@
 	        value: function searchForAddress(address) {
 
 	            var self = this;
-
+	            // this.setState = this.setState.bind(this);
 	            // We will use GMaps' geocode functionality,
 	            // which is built on top of the Google Maps API
 
@@ -29114,6 +29114,7 @@
 	                    if (status !== 'OK') return;
 
 	                    var latlng = results[0].geometry.location;
+	                    console.log('latlan' + latlng);
 
 	                    self.setState({
 	                        currentAddress: results[0].formatted_address,
@@ -29165,7 +29166,7 @@
 	        var _this = _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).call(this, props));
 
 	        _this.state = { value: '' };
-	        console.log('hi');
+
 	        _this.handleSubmit = _this.handleSubmit.bind(_this);
 	        _this.handleChange = _this.handleChange.bind(_this);
 	        return _this;
@@ -29174,18 +29175,18 @@
 	    _createClass(Search, [{
 	        key: 'handleChange',
 	        value: function handleChange(event) {
-	            this.setState({ value: event.target.value }).bind(this);
+	            this.setState({ value: event.target.value });
 	        }
 	    }, {
 	        key: 'handleSubmit',
 	        value: function handleSubmit(event) {
 
-	            console.log('submit');
 	            event.preventDefault();
 
 	            // When the form is submitted, call the onSearch callback that is passed to the component
 
 	            this.props.onSearch(this.state.value);
+	            console.log(this.state.value);
 
 	            // Unfocus the text input field
 	            // console.log(this.getDOMNode());
