@@ -17,7 +17,7 @@ export default class LocationItem extends React.Component {
         return (
             <a className={cn} onClick={this.handleClick.bind(this)}>
                 {this.props.address}
-        
+
                 <span className="glyphicon glyphicon-menu-right"></span>
             </a>
         )
@@ -26,3 +26,4 @@ export default class LocationItem extends React.Component {
 }
 
 // export default LocationItem;
+//   <span className="createdAt">{ moment(this.props.timestamp).fromNow() }</span>
